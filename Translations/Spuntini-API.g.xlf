@@ -48,6 +48,11 @@
           <note from="Developer" annotates="general" priority="2"></note>
           <note from="Xliff Generator" annotates="general" priority="3">Page SP Item API - Control itemReferencesBarcodes - Property Caption</note>
         </trans-unit>
+        <trans-unit id="Page 3882138210 - Control 4142513374 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
+          <source>Item References Vendors</source>
+          <note from="Developer" annotates="general" priority="2"></note>
+          <note from="Xliff Generator" annotates="general" priority="3">Page SP Item API - Control itemReferencesVendors - Property Caption</note>
+        </trans-unit>
         <trans-unit id="Page 2567797962 - Control 4098519211 - Property 2879900210" size-unit="char" translate="yes" xml:space="preserve">
           <source>SystemModifiedAt</source>
           <note from="Developer" annotates="general" priority="2"></note>

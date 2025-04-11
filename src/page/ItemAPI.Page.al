@@ -168,14 +168,14 @@ page 55039 "SP Item API"
                 {
                     Caption = 'Substitutes Exist', Locked = true;
                 }
-                //part(itemReferencesVendors; "SP Item Reference API")
-                //{
-                //    Caption = 'Item References Vendors';
-                //    EntityName = 'itemReference';
-                //    EntitySetName = 'itemReferences';
-                //    ApplicationArea = All;
-                //    SubPageLink = "Item No." = field("No."), "Reference Type" = filter("Vendor");
-                //}
+                part(itemReferencesVendors; "SP Item Reference API")
+                {
+                    Caption = 'Item References Vendors';
+                    EntityName = 'itemReference';
+                    EntitySetName = 'itemReferences';
+                    ApplicationArea = All;
+                    SubPageLink = "Item No." = field("No."), "Reference Type" = filter("Vendor");
+                }
                 part(itemReferencesBarcodes; "SP Item Reference API")
                 {
                     Caption = 'Item References Barcodes';

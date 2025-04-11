@@ -1,0 +1,11 @@
+.alpackages/*
+.powershell/*
+!.powershell/Get-Scripts.ps1
+!.powershell/Start-Backup.ps1
+!.powershell/Start-Restore.ps1
+!.powershell/Invoke-Customscript.ps1
+.snapshots/*
+.vscode/*
+!.vscode/launch.json
+!.vscode/session.json
+!.vscode/settings.json

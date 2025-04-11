@@ -1,0 +1,486 @@
+page 55018 "SP Sales Shipment Header API"
+{
+    PageType = API;
+    Caption = 'Sales Shipment Header', Locked = true;
+    EntityName = 'salesShipmentHeader';
+    EntitySetName = 'salesShipmentHeaders';
+    APIPublisher = 'christiaens';
+    APIGroup = 'spuntini';
+    ODataKeyFields = SystemId;
+    APIVersion = 'v1.0';
+    SourceTable = "Sales Shipment Header";
+    ApplicationArea = All;
+    ChangeTrackingAllowed = true;
+    Editable = false;
+    InsertAllowed = false;
+    DeleteAllowed = false;
+    //DelayedInsert = true;
+
+    layout
+    {
+        area(Content)
+        {
+            repeater(Group)
+            {
+                field(allowLineDisc; Rec."Allow Line Disc.")
+                {
+                    Caption = 'Allow Line Disc.', Locked = true;
+                }
+                field(appliesToDocNo; Rec."Applies-to Doc. No.")
+                {
+                    Caption = 'Applies-to Doc. No.', Locked = true;
+                }
+                field(appliesToDocType; Rec."Applies-to Doc. Type")
+                {
+                    Caption = 'Applies-to Doc. Type', Locked = true;
+                }
+                field("area"; Rec."Area")
+                {
+                    Caption = 'Area', Locked = true;
+                }
+                field(balAccountNo; Rec."Bal. Account No.")
+                {
+                    Caption = 'Bal. Account No.', Locked = true;
+                }
+                field(balAccountType; Rec."Bal. Account Type")
+                {
+                    Caption = 'Bal. Account Type', Locked = true;
+                }
+                field(billToAddress; Rec."Bill-to Address")
+                {
+                    Caption = 'Bill-to Address', Locked = true;
+                }
+                field(billToAddress2; Rec."Bill-to Address 2")
+                {
+                    Caption = 'Bill-to Address 2', Locked = true;
+                }
+                field(billToCity; Rec."Bill-to City")
+                {
+                    Caption = 'Bill-to City', Locked = true;
+                }
+                field(billToContact; Rec."Bill-to Contact")
+                {
+                    Caption = 'Bill-to Contact', Locked = true;
+                }
+                field(billToContactNo; Rec."Bill-to Contact No.")
+                {
+                    Caption = 'Bill-to Contact No.', Locked = true;
+                }
+                field(billToCountryRegionCode; Rec."Bill-to Country/Region Code")
+                {
+                    Caption = 'Bill-to Country/Region Code', Locked = true;
+                }
+                field(billToCounty; Rec."Bill-to County")
+                {
+                    Caption = 'Bill-to County', Locked = true;
+                }
+                field(billToCustomerNo; Rec."Bill-to Customer No.")
+                {
+                    Caption = 'Bill-to Customer No.', Locked = true;
+                }
+                field(billToName; Rec."Bill-to Name")
+                {
+                    Caption = 'Bill-to Name', Locked = true;
+                }
+                field(billToName2; Rec."Bill-to Name 2")
+                {
+                    Caption = 'Bill-to Name 2', Locked = true;
+                }
+                field(billToPostCode; Rec."Bill-to Post Code")
+                {
+                    Caption = 'Bill-to Post Code', Locked = true;
+                }
+                field(campaignNo; Rec."Campaign No.")
+                {
+                    Caption = 'Campaign No.', Locked = true;
+                }
+                field(comment; Rec.Comment)
+                {
+                    Caption = 'Comment', Locked = true;
+                }
+                field(companyBankAccountCode; Rec."Company Bank Account Code")
+                {
+                    Caption = 'Company Bank Account Code', Locked = true;
+                }
+                field(correction; Rec.Correction)
+                {
+                    Caption = 'Correction', Locked = true;
+                }
+                field(currencyCode; Rec."Currency Code")
+                {
+                    Caption = 'Currency Code', Locked = true;
+                }
+                field(currencyFactor; Rec."Currency Factor")
+                {
+                    Caption = 'Currency Factor', Locked = true;
+                }
+                field(customerDiscGroup; Rec."Customer Disc. Group")
+                {
+                    Caption = 'Customer Disc. Group', Locked = true;
+                }
+                field(customerPostingGroup; Rec."Customer Posting Group")
+                {
+                    Caption = 'Customer Posting Group', Locked = true;
+                }
+                field(customerPriceGroup; Rec."Customer Price Group")
+                {
+                    Caption = 'Customer Price Group', Locked = true;
+                }
+                field(dimensionSetID; Rec."Dimension Set ID")
+                {
+                    Caption = 'Dimension Set ID', Locked = true;
+                }
+                field(documentDate; Rec."Document Date")
+                {
+                    Caption = 'Document Date', Locked = true;
+                }
+                field(dueDate; Rec."Due Date")
+                {
+                    Caption = 'Due Date', Locked = true;
+                }
+                field(enterpriseNo; Rec."Enterprise No.")
+                {
+                    Caption = 'Enterprise No.', Locked = true;
+                }
+                field(eu3PartyTrade; Rec."EU 3-Party Trade")
+                {
+                    Caption = 'EU 3-Party Trade', Locked = true;
+                }
+                field(exitPoint; Rec."Exit Point")
+                {
+                    Caption = 'Exit Point', Locked = true;
+                }
+                field(externalDocumentNo; Rec."External Document No.")
+                {
+                    Caption = 'External Document No.', Locked = true;
+                }
+                field(formatRegion; Rec."Format Region")
+                {
+                    Caption = 'Format Region', Locked = true;
+                }
+                field(genBusPostingGroup; Rec."Gen. Bus. Posting Group")
+                {
+                    Caption = 'Gen. Bus. Posting Group', Locked = true;
+                }
+                field(invoiceDiscCode; Rec."Invoice Disc. Code")
+                {
+                    Caption = 'Invoice Disc. Code', Locked = true;
+                }
+                field(languageCode; Rec."Language Code")
+                {
+                    Caption = 'Language Code', Locked = true;
+                }
+                field(locationCode; Rec."Location Code")
+                {
+                    Caption = 'Location Code', Locked = true;
+                }
+                field(no; Rec."No.")
+                {
+                    Caption = 'No.', Locked = true;
+                }
+                field(noPrinted; Rec."No. Printed")
+                {
+                    Caption = 'No. Printed', Locked = true;
+                }
+                field(noSeries; Rec."No. Series")
+                {
+                    Caption = 'No. Series', Locked = true;
+                }
+                field(onHold; Rec."On Hold")
+                {
+                    Caption = 'On Hold', Locked = true;
+                }
+                field(opportunityNo; Rec."Opportunity No.")
+                {
+                    Caption = 'Opportunity No.', Locked = true;
+                }
+                field(orderDate; Rec."Order Date")
+                {
+                    Caption = 'Order Date', Locked = true;
+                }
+                field(orderNo; Rec."Order No.")
+                {
+                    Caption = 'Order No.', Locked = true;
+                }
+                field(orderNoSeries; Rec."Order No. Series")
+                {
+                    Caption = 'Order No. Series', Locked = true;
+                }
+                field(outboundWhseHandlingTime; Rec."Outbound Whse. Handling Time")
+                {
+                    Caption = 'Outbound Whse. Handling Time', Locked = true;
+                }
+#pragma warning disable AL0432
+                field(packageTrackingNo; Rec."Package Tracking No.")
+                {
+                    Caption = 'Package Tracking No.', Locked = true;
+                }
+#pragma warning restore
+                field(paymentDiscount; Rec."Payment Discount %")
+                {
+                    Caption = 'Payment Discount %', Locked = true;
+                }
+                field(paymentMethodCode; Rec."Payment Method Code")
+                {
+                    Caption = 'Payment Method Code', Locked = true;
+                }
+                field(paymentTermsCode; Rec."Payment Terms Code")
+                {
+                    Caption = 'Payment Terms Code', Locked = true;
+                }
+                field(pmtDiscountDate; Rec."Pmt. Discount Date")
+                {
+                    Caption = 'Pmt. Discount Date', Locked = true;
+                }
+                field(postingDate; Rec."Posting Date")
+                {
+                    Caption = 'Posting Date', Locked = true;
+                }
+                field(postingDescription; Rec."Posting Description")
+                {
+                    Caption = 'Posting Description', Locked = true;
+                }
+                field(priceCalculationMethod; Rec."Price Calculation Method")
+                {
+                    Caption = 'Price Calculation Method', Locked = true;
+                }
+                field(pricesIncludingVAT; Rec."Prices Including VAT")
+                {
+                    Caption = 'Prices Including VAT', Locked = true;
+                }
+                field(promisedDeliveryDate; Rec."Promised Delivery Date")
+                {
+                    Caption = 'Promised Delivery Date', Locked = true;
+                }
+                field(quoteNo; Rec."Quote No.")
+                {
+                    Caption = 'Quote No.', Locked = true;
+                }
+                field(reasonCode; Rec."Reason Code")
+                {
+                    Caption = 'Reason Code', Locked = true;
+                }
+                field(requestedDeliveryDate; Rec."Requested Delivery Date")
+                {
+                    Caption = 'Requested Delivery Date', Locked = true;
+                }
+                field(responsibilityCenter; Rec."Responsibility Center")
+                {
+                    Caption = 'Responsibility Center', Locked = true;
+                }
+                field(route; Rec.Route)
+                {
+                    Caption = 'Route', Comment = 'nl-BE=Route', Locked = true;
+                }
+                field(salespersonCode; Rec."Salesperson Code")
+                {
+                    Caption = 'Salesperson Code', Locked = true;
+                }
+                field(sellToAddress; Rec."Sell-to Address")
+                {
+                    Caption = 'Sell-to Address', Locked = true;
+                }
+                field(sellToAddress2; Rec."Sell-to Address 2")
+                {
+                    Caption = 'Sell-to Address 2', Locked = true;
+                }
+                field(sellToCity; Rec."Sell-to City")
+                {
+                    Caption = 'Sell-to City', Locked = true;
+                }
+                field(sellToContact; Rec."Sell-to Contact")
+                {
+                    Caption = 'Sell-to Contact', Locked = true;
+                }
+                field(sellToContactNo; Rec."Sell-to Contact No.")
+                {
+                    Caption = 'Sell-to Contact No.', Locked = true;
+                }
+                field(sellToCountryRegionCode; Rec."Sell-to Country/Region Code")
+                {
+                    Caption = 'Sell-to Country/Region Code', Locked = true;
+                }
+                field(sellToCounty; Rec."Sell-to County")
+                {
+                    Caption = 'Sell-to County', Locked = true;
+                }
+                field(sellToCustomerName; Rec."Sell-to Customer Name")
+                {
+                    Caption = 'Sell-to Customer Name', Locked = true;
+                }
+                field(sellToCustomerName2; Rec."Sell-to Customer Name 2")
+                {
+                    Caption = 'Sell-to Customer Name 2', Locked = true;
+                }
+                field(sellToCustomerNo; Rec."Sell-to Customer No.")
+                {
+                    Caption = 'Sell-to Customer No.', Locked = true;
+                }
+                field(sellToEMail; Rec."Sell-to E-Mail")
+                {
+                    Caption = 'Email', Locked = true;
+                }
+                field(sellToPhoneNo; Rec."Sell-to Phone No.")
+                {
+                    Caption = 'Sell-to Phone No.', Locked = true;
+                }
+                field(sellToPostCode; Rec."Sell-to Post Code")
+                {
+                    Caption = 'Sell-to Post Code', Locked = true;
+                }
+                field(shipToAddress; Rec."Ship-to Address")
+                {
+                    Caption = 'Ship-to Address', Locked = true;
+                }
+                field(shipToAddress2; Rec."Ship-to Address 2")
+                {
+                    Caption = 'Ship-to Address 2', Locked = true;
+                }
+                field(shipToCity; Rec."Ship-to City")
+                {
+                    Caption = 'Ship-to City', Locked = true;
+                }
+                field(shipToCode; Rec."Ship-to Code")
+                {
+                    Caption = 'Ship-to Code', Locked = true;
+                }
+                field(shipToContact; Rec."Ship-to Contact")
+                {
+                    Caption = 'Ship-to Contact', Locked = true;
+                }
+                field(shipToCountryRegionCode; Rec."Ship-to Country/Region Code")
+                {
+                    Caption = 'Ship-to Country/Region Code', Locked = true;
+                }
+                field(shipToCounty; Rec."Ship-to County")
+                {
+                    Caption = 'Ship-to County', Locked = true;
+                }
+                field(shipToName; Rec."Ship-to Name")
+                {
+                    Caption = 'Ship-to Name', Locked = true;
+                }
+                field(shipToName2; Rec."Ship-to Name 2")
+                {
+                    Caption = 'Ship-to Name 2', Locked = true;
+                }
+                field(shipToPostCode; Rec."Ship-to Post Code")
+                {
+                    Caption = 'Ship-to Post Code', Locked = true;
+                }
+                field(shipmentDate; Rec."Shipment Date")
+                {
+                    Caption = 'Shipment Date', Locked = true;
+                }
+                field(shipmentMethodCode; Rec."Shipment Method Code")
+                {
+                    Caption = 'Shipment Method Code', Locked = true;
+                }
+                field(shippingAgentCode; Rec."Shipping Agent Code")
+                {
+                    Caption = 'Shipping Agent Code', Locked = true;
+                }
+                field(shippingAgentServiceCode; Rec."Shipping Agent Service Code")
+                {
+                    Caption = 'Shipping Agent Service Code', Locked = true;
+                }
+                field(shippingTime; Rec."Shipping Time")
+                {
+                    Caption = 'Shipping Time', Locked = true;
+                }
+                field(shortcutDimension1Code; Rec."Shortcut Dimension 1 Code")
+                {
+                    Caption = 'Shortcut Dimension 1 Code', Locked = true;
+                }
+                field(shortcutDimension2Code; Rec."Shortcut Dimension 2 Code")
+                {
+                    Caption = 'Shortcut Dimension 2 Code', Locked = true;
+                }
+                field(sourceCode; Rec."Source Code")
+                {
+                    Caption = 'Source Code', Locked = true;
+                }
+                field(systemCreatedAt; Rec.SystemCreatedAt)
+                {
+                    Caption = 'SystemCreatedAt', Locked = true;
+                }
+                field(systemCreatedBy; Rec.SystemCreatedBy)
+                {
+                    Caption = 'SystemCreatedBy', Locked = true;
+                }
+                field(systemId; Rec.SystemId)
+                {
+                    Caption = 'SystemId', Locked = true;
+                }
+                field(systemModifiedAt; Rec.SystemModifiedAt)
+                {
+                    Caption = 'SystemModifiedAt', Locked = true;
+                }
+                field(systemModifiedBy; Rec.SystemModifiedBy)
+                {
+                    Caption = 'SystemModifiedBy', Locked = true;
+                }
+                field(taxAreaCode; Rec."Tax Area Code")
+                {
+                    Caption = 'Tax Area Code', Locked = true;
+                }
+                field(taxLiable; Rec."Tax Liable")
+                {
+                    Caption = 'Tax Liable', Locked = true;
+                }
+                field(totalAmount; Rec."Total amount")
+                {
+                    Caption = 'Total amount', Comment = 'nl-BE=Totaalbedrag', Locked = true;
+                }
+                field(totalAmountInclVAT; Rec."Total amount (incl. VAT)")
+                {
+                    Caption = 'Total amount (incl VAT)', Comment = 'nl-BE=Totaalbedrag (incl BTW)', Locked = true;
+                }
+                field(totalVAT; Rec."Total VAT")
+                {
+                    Caption = 'Total VAT', Comment = 'nl-BE=Totaal BTW', Locked = true;
+                }
+                field(transactionSpecification; Rec."Transaction Specification")
+                {
+                    Caption = 'Transaction Specification', Locked = true;
+                }
+                field(transactionType; Rec."Transaction Type")
+                {
+                    Caption = 'Transaction Type', Locked = true;
+                }
+                field(transportMethod; Rec."Transport Method")
+                {
+                    Caption = 'Transport Method', Locked = true;
+                }
+                field("userID"; Rec."User ID")
+                {
+                    Caption = 'User ID', Locked = true;
+                }
+                field(vatBaseDiscount; Rec."VAT Base Discount %")
+                {
+                    Caption = 'VAT Base Discount %', Locked = true;
+                }
+                field(vatBusPostingGroup; Rec."VAT Bus. Posting Group")
+                {
+                    Caption = 'VAT Bus. Posting Group', Locked = true;
+                }
+                field(vatCountryRegionCode; Rec."VAT Country/Region Code")
+                {
+                    Caption = 'VAT Country/Region Code', Locked = true;
+                }
+                field(vatRegistrationNo; Rec."VAT Registration No.")
+                {
+                    Caption = 'VAT Registration No.', Locked = true;
+                }
+                field(workDescription; Rec."Work Description")
+                {
+                    Caption = 'Work Description', Locked = true;
+                }
+                field(yourReference; Rec."Your Reference")
+                {
+                    Caption = 'Your Reference', Locked = true;
+                }
+            }
+        }
+    }
+}

@@ -294,7 +294,7 @@ page 55040 "SP Contact API"
                 {
                     Caption = 'Salutation Code', Locked = true;
                 }
-                field(scCustomerTemplateCode; Rec."SC Customer Template Code")
+                field(scCustomerTemplateCode; SCCustomerTemplateCode)
                 {
                     Caption = 'Customer Template Code', Locked = true;
                 }
@@ -358,7 +358,21 @@ page 55040 "SP Contact API"
                 {
                     Caption = 'Xrm Id', Locked = true;
                 }
+                field(allowWebsiteLogin; Rec."Allow Website Login")
+                {
+                    Caption = 'Website Login Toegelaten';
+                }
             }
         }
     }
+
+
+    trigger OnAfterGetRecord()
+    begin
+        SCCustomerTemplateCode := 'deleted extension';
+    end;
+
+    var
+        SCCustomerTemplateCode: Text[50];
+
 }

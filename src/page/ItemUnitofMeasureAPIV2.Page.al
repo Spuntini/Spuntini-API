@@ -1,19 +1,21 @@
-page 55005 "SP Item Unit of Measure API"
+page 55067 "SP Item Unit of Measure API V2"
 {
     PageType = API;
     Caption = 'Item Unit of Measures', Locked = true;
     EntityName = 'itemUnitOfMeasure';
     EntitySetName = 'itemUnitOfMeasures';
-    APIPublisher = 'christiaens';
-    APIGroup = 'spuntini';
+    APIPublisher = 'spuntini';
+    APIGroup = 'automate';
     ODataKeyFields = SystemId;
-    APIVersion = 'v1.0';
+    APIVersion = 'v2.0';
     SourceTable = "Item Unit of Measure";
     ApplicationArea = All;
     ChangeTrackingAllowed = true;
-    Editable = false;
-    InsertAllowed = false;
-    DeleteAllowed = false;
+    //Editable = false;
+    InsertAllowed = true;
+    ModifyAllowed = true;
+    DeleteAllowed = true;
+    DelayedInsert = true;
 
     layout
     {
@@ -93,42 +95,8 @@ page 55005 "SP Item Unit of Measure API"
                 {
                     Caption = 'SystemModifiedBy', Locked = true;
                 }
-
-                // Dummy velden voor verwijderde kolommen (altijd 0 uitsturen)
-                field(scdefaultquantity; ZeroValue)
-                {
-                    Caption = 'default quantity';
-                }
-                field(scmaximumquantity; ZeroValue)
-                {
-                    Caption = 'maximum quantity';
-                }
-                field(scminimumquantity; ZeroValue)
-                {
-                    Caption = 'minimum quantity';
-                }
-                field(scquantitystep; ZeroValue)
-                {
-                    Caption = 'quantity step';
-                }
-
-                field(scVisibleInWebshop; Rec."Visible in Webshop")
-                {
-                    Caption = 'Visible in Webshop';
-                }
-                field(scWebshopDefault; Rec."Webshop Default")
-                {
-                    Caption = 'Webshop Default';
-                }
             }
         }
     }
 
-    var
-        ZeroValue: Decimal;
-
-    trigger OnAfterGetRecord()
-    begin
-        ZeroValue := 0;
-    end;
 }

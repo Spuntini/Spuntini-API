@@ -422,19 +422,19 @@ page 55024 "SP Sales Invoice Header API"
                 {
                     Caption = 'Salesperson Code', Locked = true;
                 }
-                field(scComment; Rec."SC Comment")
+                field(scComment; deletedext)
                 {
                     Caption = 'Sana Commerce Comment', Locked = true;
                 }
-                field(scPaymentStatus; Rec."SC Payment Status")
+                field(scPaymentStatus; deletedext)
                 {
                     Caption = 'Payment Status', Locked = true;
                 }
-                field(scShopAccountEMail; Rec."SC Shop Account E-Mail")
+                field(scShopAccountEMail; deletedext)
                 {
                     Caption = 'Shop Account E-Mail', Locked = true;
                 }
-                field(scUniqueWebshopDocumentId; Rec."SC Unique Webshop Document Id")
+                field(scUniqueWebshopDocumentId; deletedext)
                 {
                     Caption = 'Unique Webshop Document Id', Locked = true;
                 }
@@ -629,4 +629,12 @@ page 55024 "SP Sales Invoice Header API"
             }
         }
     }
+    var
+        deletedext: Text[50];
+
+    trigger OnAfterGetRecord()
+    begin
+        deletedext := 'deleted extension';
+    end;
+
 }

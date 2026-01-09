@@ -53,10 +53,10 @@ page 55049 "SP SalesPersonPurchaser API"
                 {
                     Caption = 'Cost (LCY)';
                 }
-                field(coupledToCRM; Rec."Coupled to CRM")
-                {
-                    Caption = 'Coupled to Dataverse';
-                }
+                // field(coupledToCRM; Rec."Coupled to CRM")
+                // {
+                //     Caption = 'Coupled to Dataverse';
+                // }
                 field(coupledToDataverse; Rec."Coupled to Dataverse")
                 {
                     Caption = 'Coupled to Dataverse';
@@ -125,38 +125,37 @@ page 55049 "SP SalesPersonPurchaser API"
                 {
                     Caption = 'Privacy Blocked';
                 }
-                field(scLastDateTimeModified; Rec."SC Last Date/Time Modified")
-                {
-                    Caption = 'Last Date/Time Modified';
-                }
-                field(searchEMail; Rec."Search E-Mail")
-                {
-                    Caption = 'Search Email';
-                }
-                field(systemCreatedAt; Rec.SystemCreatedAt)
-                {
-                    Caption = 'SystemCreatedAt';
-                }
-                field(systemCreatedBy; Rec.SystemCreatedBy)
-                {
-                    Caption = 'SystemCreatedBy';
-                }
-                field(systemId; Rec.SystemId)
-                {
-                    Caption = 'SystemId';
-                }
-                field(systemModifiedAt; Rec.SystemModifiedAt)
-                {
-                    Caption = 'SystemModifiedAt';
-                }
-                field(systemModifiedBy; Rec.SystemModifiedBy)
-                {
-                    Caption = 'SystemModifiedBy';
-                }
-                field(taskEntryExists; Rec."Task Entry Exists")
-                {
-                    Caption = 'Task Entry Exists';
-                }
+                //  field(scLastDateTimeModified; Rec."SC Last Date/Time Modified")
+                //  {
+                //     Caption = 'Last Date/Time Modified';
+                // }
+                // field(searchEMail; Rec."Search E-Mail")
+                // {
+                //     Caption = 'Search Email';
+            }
+            field(systemCreatedAt; Rec.SystemCreatedAt)
+            {
+                Caption = 'SystemCreatedAt';
+            }
+            field(systemCreatedBy; Rec.SystemCreatedBy)
+            {
+                Caption = 'SystemCreatedBy';
+            }
+            field(systemId; Rec.SystemId)
+            {
+                Caption = 'SystemId';
+            }
+            field(systemModifiedAt; Rec.SystemModifiedAt)
+            {
+                Caption = 'SystemModifiedAt';
+            }
+            field(systemModifiedBy; Rec.SystemModifiedBy)
+            {
+                Caption = 'SystemModifiedBy';
+            }
+            field(taskEntryExists; Rec."Task Entry Exists")
+            {
+                Caption = 'Task Entry Exists';
             }
         }
     }

@@ -1,22 +1,23 @@
-page 55039 "SP Item API"
+page 55063 "SP Item API V3"
 {
     PageType = API;
     Caption = 'Items', Locked = true;
     //EntityCaption = 'Item Variant', Locked = true,locked = true;
     //EntitySetCaption = 'Item Variants', Locked = true,locked = true;
-    EntityName = 'item';
-    EntitySetName = 'items';
-    APIPublisher = 'christiaens';
-    APIGroup = 'spuntini';
+    EntityName = 'item_extended';
+    EntitySetName = 'items_extended';
+    APIPublisher = 'spuntini';
+    APIGroup = 'automate';
     ODataKeyFields = SystemId;
-    APIVersion = 'v1.0';
+    APIVersion = 'v2.0';
     SourceTable = Item;
     ApplicationArea = All;
     ChangeTrackingAllowed = true;
-    Editable = false;
-    InsertAllowed = false;
-    DeleteAllowed = false;
-    //DelayedInsert = true;
+    Editable = true;
+    InsertAllowed = true;
+    DeleteAllowed = true;
+    ModifyAllowed = true;
+    DelayedInsert = true;
 
     layout
     {
@@ -211,16 +212,24 @@ page 55039 "SP Item API"
                     Caption = 'Block Reason';
                 }
             }
-        }
-    }
 
-    //trigger OnAfterGetRecord()
-    //begin
-    //    itemmgt.getPurchasePricesPerUnit(rec."Vendor No.", rec."No.", rec."Purchase Default Quantity", '', Today, PurchBasePrice, InvoicePricePerUnit, ContractPriceInclNotApply, PurchasePromoActive);
-    //    ICSalesPrice := itemmgt.getICSalesPrice(rec, InvoicePricePerUnit, rec."Markup % IC", '');
-    //    LastDirectCostInTradeUnit := ItemMgt.ConvertPriceToOtherUOM(Rec."No.", rec."Base Unit of Measure", rec."last direct cost", Rec."trade Unit of Measure");
-    //    VisibleInWebshop := Rec."SC Visible in Webshop";
-    //end;
+            // Child Entity voor opmerkingen
+            part(Comments; "SP default Dimension API V2")
+            {
+                Caption = 'Default Dimensions';
+                SubPageLink = "Table ID" = const(27), "No." = field("No.");
+            }
+        }
+
+        //trigger OnAfterGetRecord()
+        //begin
+        //    itemmgt.getPurchasePricesPerUnit(rec."Vendor No.", rec."No.", rec."Purchase Default Quantity", '', Today, PurchBasePrice, InvoicePricePerUnit, ContractPriceInclNotApply, PurchasePromoActive);
+        //    ICSalesPrice := itemmgt.getICSalesPrice(rec, InvoicePricePerUnit, rec."Markup % IC", '');
+        //    LastDirectCostInTradeUnit := ItemMgt.ConvertPriceToOtherUOM(Rec."No.", rec."Base Unit of Measure", rec."last direct cost", Rec."trade Unit of Measure");
+        //    VisibleInWebshop := Rec."SC Visible in Webshop";
+        //end;
+    }
     var
+#pragma warning restore AL0104
         VisibleInWebshop: Boolean;
 }

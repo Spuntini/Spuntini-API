@@ -2,8 +2,8 @@ page 55042 "SP Route API"
 {
     PageType = API;
     EntityName = 'Route';
-    Caption = 'Routes', Locked = true;
-    EntitySetName = 'Routes';
+    Caption = 'routes', Locked = true;
+    EntitySetName = 'routes';
     APIPublisher = 'christiaens';
     APIGroup = 'spuntini';
     ODataKeyFields = SystemId;

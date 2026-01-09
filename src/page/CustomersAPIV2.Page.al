@@ -1,4 +1,4 @@
-page 55044 "SP Customers API"
+page 55059 "SP Customers API V2"
 {
     PageType = API;
     Caption = 'Customers', Locked = true;
@@ -6,16 +6,17 @@ page 55044 "SP Customers API"
     //EntitySetCaption = 'Item Variants', Locked = true, Locked = true;
     EntityName = 'customer';
     EntitySetName = 'customers';
-    APIPublisher = 'christiaens';
-    APIGroup = 'spuntini';
+    APIPublisher = 'spuntini';
+    APIGroup = 'automate';
     ODataKeyFields = SystemId;
-    APIVersion = 'v1.0';
+    APIVersion = 'v2.0';
     SourceTable = Customer;
     ChangeTrackingAllowed = true;
-    Editable = false;
-    InsertAllowed = false;
-    DeleteAllowed = false;
-    //DelayedInsert = true;
+    //Editable = false;
+    InsertAllowed = true;
+    ModifyAllowed = true;
+    DeleteAllowed = true;
+    DelayedInsert = true;
 
     layout
     {
@@ -23,6 +24,16 @@ page 55044 "SP Customers API"
         {
             repeater(Group)
             {
+                field(skipDuplicateCheck; SkipDuplicateCheck) // Extra code om de controle uit te schakelen op duplicate VAT nummers
+                {
+                    Caption = 'skipDuplicateCheck', locked = true;
+                    trigger OnValidate()
+                    var
+                        SingleInstanceFunctions: Codeunit "Single Instance Functions";
+                    begin
+                        SingleInstanceFunctions.setParameter('skipDuplicateCheck', SkipDuplicateCheck);
+                    end;
+                }
                 field(deliveryFriday; Rec."Delivery Friday")
                 {
                     Caption = 'Friday', Locked = true;
@@ -239,7 +250,21 @@ page 55044 "SP Customers API"
                 {
                     Caption = 'VAT Registration No.';
                 }
+                field(shipmentMethodCode; Rec."Shipment Method Code")
+                {
+                    Caption = 'Shipment Method Code';
+                }
+            }
 
+
+            // ---------------------------------joins---------------------------------           
+
+            part(priceListLines; "SP Price List Line API V2")
+            {
+                Caption = 'Price List Lines';
+                SubPageLink =
+                            "Source No." = field("No."),
+                            "Source Type" = const(Customer);
             }
         }
     }
@@ -268,13 +293,14 @@ page 55044 "SP Customers API"
     end;
 
 
-
-
-
     var
         B2cCustomer: Boolean;
         WebshopGuest: Boolean;
         SanaCustomerNo: Text[50];
         CalculatedOverdueBalanceLCY: Decimal;
+        CheckForDuplicateVATRegistrationNumber: Boolean;
+        SkipDuplicateCheck: Boolean;
+
+
 
 }

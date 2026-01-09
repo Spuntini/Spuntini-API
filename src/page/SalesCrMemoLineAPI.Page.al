@@ -21,6 +21,18 @@ page 55047 "SP Sales Cr Memo Line API"
         {
             repeater(Group)
             {
+                field(amountIncludingVAT; Rec."Amount Including VAT")
+                {
+                    Caption = 'Amount Including VAT', Locked = true;
+                }
+                field(systemModifiedAt; Rec.SystemModifiedAt)
+                {
+                    Caption = 'SystemModifiedAt', Locked = true;
+                }
+                field(systemModifiedBy; Rec.SystemModifiedBy)
+                {
+                    Caption = 'SystemModifiedBy', Locked = true;
+                }
                 field(nettoCostPerUnit; Rec.NettoCostPerUnit)
                 {
                     Caption = 'Netto Price per Unit', Comment = 'nl-BE=Nettoprijs per eenheid exclusief promo', Locked = true;
@@ -29,11 +41,35 @@ page 55047 "SP Sales Cr Memo Line API"
                 {
                     Caption = 'No.', Locked = true;
                 }
-                field(outstandingQtyBase; Rec."Quantity (Base)")
+                field(orderNo; Rec."Order No.")
                 {
-                    Caption = 'Quantity (Base)', Locked = true;
+                    Caption = 'Order No.', Locked = true;
                 }
-                field(outstandingQuantity; Rec.Quantity)
+                field(orderLineNo; Rec."Order Line No.")
+                {
+                    Caption = 'Order Line No.', Locked = true;
+                }
+                field(pmtDiscountAmount; Rec."Pmt. Discount Amount")
+                {
+                    Caption = 'Pmt. Discount Amount', Locked = true;
+                }
+                field(postingDate; Rec."Posting Date")
+                {
+                    Caption = 'Posting Date', Locked = true;
+                }
+                field(postingGroup; Rec."Posting Group")
+                {
+                    Caption = 'Posting Group', Locked = true;
+                }
+                field(promoDiscount; Rec."Promo Discount %")
+                {
+                    Caption = 'Promo Discount %', Locked = true;
+                }
+                field(qtyPerUnitOfMeasure; Rec."Qty. per Unit of Measure")
+                {
+                    Caption = 'Qty. per Unit of Measure', Locked = true;
+                }
+                field(quantity; Rec.Quantity)
                 {
                     Caption = 'Quantity', Locked = true;
                 }
@@ -41,10 +77,14 @@ page 55047 "SP Sales Cr Memo Line API"
                 {
                     Caption = 'Sell-to Customer No.', Locked = true;
                 }
-                field(shipmentDate; Rec."Shipment Date")
-                {
-                    Caption = 'Shipment Date', Locked = true;
-                }
+                // field(shipmentNo; Rec."Shipment No.")
+                // {
+                //     Caption = 'Shipment No.', Locked = true;
+                // }
+                // field(shipmentLineNo; Rec."Shipment Line No.")
+                // {
+                //     Caption = 'Shipment Line No.', Locked = true;
+                // }
                 field(systemId; Rec.SystemId)
                 {
                     Caption = 'SystemId', Locked = true;
@@ -61,18 +101,10 @@ page 55047 "SP Sales Cr Memo Line API"
                 {
                     Caption = 'Unit Price', Locked = true;
                 }
-                field(vatBusPostingGroup; Rec."VAT Bus. Posting Group")
-                {
-                    Caption = 'VAT Bus. Posting Group', Locked = true;
-                }
-                field(vatProdPostingGroup; Rec."VAT Prod. Posting Group")
-                {
-                    Caption = 'VAT Prod. Posting Group', Locked = true;
-                }
-                field(postingDate; Rec."Posting Date")
-                {
-                    Caption = 'Posting Date', Locked = true;
-                }
+                // field(backlogNo; Rec."Backlog No.")
+                // {
+                //     Caption = 'Backlog No.', Locked = true;
+                // }
                 field(billToCustomerNo; Rec."Bill-to Customer No.")
                 {
                     Caption = 'Bill-to Customer No.', Locked = true;
@@ -89,13 +121,21 @@ page 55047 "SP Sales Cr Memo Line API"
                 {
                     Caption = 'Customer Disc. Group', Locked = true;
                 }
+                field(customerPriceGroup; Rec."Customer Price Group")
+                {
+                    Caption = 'Customer Price Group', Locked = true;
+                }
+                field(customerFixedDiscount; Rec."Customer Fixed Discount %")
+                {
+                    Caption = 'Customer Fixed Discount %', Locked = true;
+                }
+                field(defaultDiscount; Rec."Default Discount %")
+                {
+                    Caption = 'Default Discount %', Locked = true;
+                }
                 field(description; Rec.Description)
                 {
                     Caption = 'Description', Locked = true;
-                }
-                field(documentNo; Rec."Document No.")
-                {
-                    Caption = 'Document No.', Locked = true;
                 }
                 field(ccsExtraDiscount; Rec."CCS Extra Discount %")
                 {
@@ -104,6 +144,14 @@ page 55047 "SP Sales Cr Memo Line API"
                 field(genBusPostingGroup; Rec."Gen. Bus. Posting Group")
                 {
                     Caption = 'Gen. Bus. Posting Group', Locked = true;
+                }
+                field(genProdPostingGroup; Rec."Gen. Prod. Posting Group")
+                {
+                    Caption = 'Gen. Prod. Posting Group', Locked = true;
+                }
+                field(ccsGeneralPromotion; Rec."CCS General Promotion %")
+                {
+                    Caption = 'General Promotion %', Locked = true;
                 }
                 field(itemCategoryCode; Rec."Item Category Code")
                 {
@@ -121,6 +169,10 @@ page 55047 "SP Sales Cr Memo Line API"
                 {
                     Caption = 'Line Discount Amount', Locked = true;
                 }
+                field(lineDiscountCalculation; Rec."Line Discount Calculation")
+                {
+                    Caption = 'Line Discount Calculation', Locked = true;
+                }
                 field(lineNo; Rec."Line No.")
                 {
                     Caption = 'Line No.', Locked = true;
@@ -129,50 +181,41 @@ page 55047 "SP Sales Cr Memo Line API"
                 {
                     Caption = 'Location Code', Locked = true;
                 }
-                field(systemModifiedAt; Rec.SystemModifiedAt)
+                field(shipmentDate; Rec."Shipment Date")
                 {
-                    Caption = 'SystemModifiedAt', Locked = true;
+                    Caption = 'Shipment Date', Locked = true;
                 }
-                field(systemModifiedBy; Rec.SystemModifiedBy)
+                // field(orderItem; Rec."Order Item")
+                // {
+                //     Caption = 'Order Item', Locked = true;
+                // }
+                field(quantityBase; Rec."Quantity (Base)")
                 {
-                    Caption = 'SystemModifiedBy', Locked = true;
+                    Caption = 'Quantity (Base)', Locked = true;
                 }
-                field(amountIncludingVAT; Rec."Amount Including VAT")
+                field(priceCalculationMethod; Rec."Price Calculation Method")
                 {
-                    Caption = 'Amount Including VAT', Locked = true;
+                    Caption = 'Price Calculation Method', Locked = true;
                 }
-                field(quantityPackage; Rec."Quantity (Package)")
+                field(vatBaseAmount; Rec."VAT Base Amount")
                 {
-                    Caption = 'Amount of Packages', Locked = true;
+                    Caption = 'VAT Base Amount', Locked = true;
                 }
-                field(name; Rec.CFLW1GetName())
+                field(vatPercent; Rec."VAT %")
                 {
-                    Caption = 'Name', Locked = true;
-                }
-                field(orderNo; Rec."Order No.")
-                {
-                    Caption = 'Order No.', Locked = true;
-                }
-                field(orderLineNo; Rec."Order Line No.")
-                {
-                    Caption = 'Order Line No.', Locked = true;
-                }
-                field(promoDiscountPercentage; Rec."Promo Discount %")
-                {
-                    Caption = 'Promo Discount %', Locked = true;
-                }
-                field(generalPromotionPercentage; Rec."CCS General Promotion %")
-                {
-                    Caption = 'General Promotion %', Locked = true;
-                }
-                field(qtyPerUnitOfMeasure; Rec."Qty. per Unit of Measure")
-                {
-                    Caption = 'Qty. per Unit of Measure', Locked = true;
+                    Caption = 'VAT %', Locked = true;
                 }
                 field(grossWeight; Rec."Gross Weight")
+                {
+                }
+                // field(salesActionNo; Rec."Sales Action No.")
+                // {
+                // }
+                field(documentNo; Rec."Document No.")
                 {
                 }
             }
         }
     }
+
 }

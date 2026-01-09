@@ -162,6 +162,10 @@ page 55048 "SP Sales Header API"
                 field(internalRemark; Rec."Internal Remark")
                 {
                 }
+                field(externalDocumentNo; Rec."External Document No.")
+                {
+                    Caption = 'External Document No.';
+                }
             }
         }
     }
@@ -174,11 +178,11 @@ page 55048 "SP Sales Header API"
 
     trigger OnAfterGetRecord()
     begin
-        UniqueWebshopDocumentId := Rec."SC Unique Webshop Document Id";
-        WebshopDocumentState := Rec."SC Webshop Document State";
+        UniqueWebshopDocumentId := '00000000-0000-0000-0000-000000000000';
+        WebshopDocumentState := 'deleted extension';
     end;
 
     var
         UniqueWebshopDocumentId: Guid;
-        WebshopDocumentState: Option Normal,Basket,"Wish List","Edit Order",Pending,Declined;
+        WebshopDocumentState: Text[50];
 }

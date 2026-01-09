@@ -1,20 +1,21 @@
-page 55010 "SP Price List Line API"
+page 55065 "SP Price List Line API V2"
 {
     PageType = API;
     Caption = 'Price List Lines', Locked = true;
     EntityName = 'priceListLine';
     EntitySetName = 'priceListLines';
-    APIPublisher = 'christiaens';
-    APIGroup = 'spuntini';
+    APIPublisher = 'spuntini';
+    APIGroup = 'automate';
     ODataKeyFields = SystemId;
-    APIVersion = 'v1.0';
+    APIVersion = 'v2.0';
     SourceTable = "Price List Line";
     ChangeTrackingAllowed = true;
-    Editable = false;
-    InsertAllowed = false;
-    DeleteAllowed = false;
+    //Editable = false;
+    InsertAllowed = true;
+    ModifyAllowed = true;
+    DeleteAllowed = true;
+    DelayedInsert = true;
 
-    //DelayedInsert = true;
 
     layout
     {

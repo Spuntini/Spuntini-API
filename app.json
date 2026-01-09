@@ -2,21 +2,28 @@
   "id": "06fea566-6f87-4ab1-ad80-07faa702f1e8",
   "name": "Spuntini-API",
   "publisher": "Spuntini",
-  "version": "25.0.0.0",
+  "version": "26.0.260108.7",
   "privacyStatement": "https://www.christiaens.net/nl/privacydisclaimer",
   "url": "https://www.christiaens.net",
   "logo": ".images/Dynamate Custom App lowercase.png",
   "dependencies": [
+
     {
       "id": "cc879410-9977-4378-a066-15e2dd627e45",
       "name": "BoCount Dynamics System",
-      "publisher": "Christiaens",
+      "publisher": "Dynamate",
       "version": "25.0.0.0"
     },
     {
       "id": "bd4e4e95-a7c5-4d79-b2c7-a1e52771eeac",
       "name": "BoCount Dynamics Base",
-      "publisher": "Christiaens",
+      "publisher": "Dynamate",
+      "version": "25.0.0.0"
+    },
+    {
+      "id": "4202775a-e46d-48db-b738-dc57bb2f78ae",
+      "name": "BoCount Dynamics Warehouse",
+      "publisher": "Dynamate",
       "version": "25.0.0.0"
     },
     {
@@ -26,16 +33,10 @@
       "version": "25.0.0.0"
     },
     {
-        "id":  "530176f7-9f0d-467b-8b30-a321d5d4b59d",
-        "name":  "Sana Commerce (RoW)",
-        "publisher":  "Sana Commerce",
-        "version":  "10.0.0.1"
-    },
-    {
         "id":  "b19a2836-c4f4-4a73-a94b-38ce03ef17ed",
         "name":  "BoCount Dynamics POS",
-        "publisher":  "Christiaens",
-        "version":  "24.0.0.0"
+        "publisher":  "Dynamate",
+        "version":  "25.0.0.0"
     }
   ],
   "screenshots": [],

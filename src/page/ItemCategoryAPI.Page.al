@@ -86,15 +86,16 @@ page 55006 "SP Item Category API"
 
     trigger OnAfterGetRecord()
     begin
-        VisibleInWebshop := Rec."SC Visible in Webshop";
-        VisibleFrom := Rec."SC Visible From Date";
-        VisibleTo := Rec."SC Visible To Date";
-        SortingNo := Rec."SC Sort No.";
+        VisibleInWebshop := false;
+        VisibleFrom := 0D;
+        VisibleTo := 0D;
+        SortingNo := 0;
     end;
 
     var
         VisibleInWebshop: Boolean;
         VisibleFrom: Date;
         VisibleTo: Date;
-        SortingNo: Integer;
+        SortingNo: BigInteger;
+
 }

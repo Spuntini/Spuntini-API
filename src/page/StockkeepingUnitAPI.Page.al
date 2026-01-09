@@ -155,6 +155,14 @@ page 55013 "SP Stockkeeping Unit API"
                 {
                     Caption = 'Order Multiple', Locked = true;
                 }
+                field(visibleInWebshop; Rec."Visible in webshop")
+                {
+                    Caption = 'Visible in webshop';
+                }
+                field(purchaser; Rec.Purchaser)
+                {
+                    Caption = 'Purchaser';
+                }
             }
         }
     }

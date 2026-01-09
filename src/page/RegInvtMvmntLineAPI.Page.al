@@ -148,6 +148,25 @@ page 55032 "SP Reg. Invt Mvmnt Line API"
             field(zoneCode; Rec."Zone Code")
             {
             }
+            field(SystemCreatedAtBelgium; SystemCreatedAtBelgium)
+            {
+                Caption = 'System Created At (Belgium)';
+                Editable = false;
+            }
         }
     }
+    var
+        TimeZone: Codeunit "Time Zone";
+        SystemCreatedAtBelgium: DateTime;
+
+    trigger OnAfterGetRecord()
+    begin
+        SystemCreatedAtBelgium := ConvertUtcToBelgianTime(Rec.SystemCreatedAt);
+    end;
+
+    local procedure ConvertUtcToBelgianTime(UtcDateTime: DateTime): DateTime
+    begin
+        exit(UtcDateTime + TimeZone.GetTimezoneOffset(UtcDateTime, 'W. Europe Standard Time'));
+    end;
+
 }

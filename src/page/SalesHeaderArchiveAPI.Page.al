@@ -105,10 +105,20 @@ page 55001 "SP Sales Header Archive API"
                 field(shipmentMethodCode; Rec."Shipment Method Code")
                 {
                 }
-                //field(shippedNotInvoiced; Rec."Shipped Not Invoiced")
-                //{
-                //}
+                field(shippedNotInvoiced; Rec."CST Shipped Not Invoiced")
+                {
+                    Caption = 'Shipped Not Invoiced';
+                }
+                // field(shippedNotInvoiced; Rec."Shipped Not Invoiced")
+                // {
+                // }
                 field(shipToCountryRegionCode; Rec."Ship-to Country/Region Code")
+                {
+                }
+                field(uniqueWebshopDocumentId; UniqueWebshopDocumentId)
+                {
+                }
+                field(webshopDocumentState; WebshopDocumentState)
                 {
                 }
                 field(amount; Rec.Amount)
@@ -121,9 +131,6 @@ page 55001 "SP Sales Header Archive API"
                 {
                 }
                 field(status; Rec.Status)
-                {
-                }
-                field(shippedNotInvoiced; Rec."CST Shipped Not Invoiced")
                 {
                 }
                 field(shipToAddress; Rec."Ship-to Address")
@@ -159,7 +166,27 @@ page 55001 "SP Sales Header Archive API"
                 field(internalRemark; Rec."Internal Remark")
                 {
                 }
+                field(externalDocumentNo; Rec."External Document No.")
+                {
+                    Caption = 'External Document No.';
+                }
             }
         }
     }
+    // local procedure GetDateTimeFormat(SystemModifiedAt: DateTime): Text
+    // var
+    //     ProjectExtensionManagement: Codeunit "Project Extension Management";
+    // begin
+    //     exit(ProjectExtensionManagement.GetApiDateTimeFormat(SystemModifiedAt));
+    // end;
+
+    trigger OnAfterGetRecord()
+    begin
+        UniqueWebshopDocumentId := '00000000-0000-0000-0000-000000000000';
+        WebshopDocumentState := 'deleted extension';
+    end;
+
+    var
+        UniqueWebshopDocumentId: Guid;
+        WebshopDocumentState: Text[50];
 }

@@ -1,4 +1,4 @@
-page 55060 "SP Vendor API"
+page 55045 "SP Vendor API V2"
 {
     PageType = API;
     Caption = 'Vendors', Locked = true;
@@ -6,17 +6,18 @@ page 55060 "SP Vendor API"
     //EntitySetCaption = 'Item Variants', Locked = true,Locked = true;
     EntityName = 'vendor';
     EntitySetName = 'vendors';
-    APIPublisher = 'christiaens';
-    APIGroup = 'spuntini';
+    APIPublisher = 'spuntini';
+    APIGroup = 'automate';
     ODataKeyFields = SystemId;
-    APIVersion = 'v1.0';
+    APIVersion = 'v2.0';
     SourceTable = Vendor;
     ApplicationArea = All;
     ChangeTrackingAllowed = true;
-    Editable = false;
-    InsertAllowed = false;
-    DeleteAllowed = false;
-    //DelayedInsert = true;
+    //Editable = false;
+    InsertAllowed = true;
+    DeleteAllowed = true;
+    ModifyAllowed = true;
+    DelayedInsert = true;
 
     layout
     {
@@ -112,6 +113,25 @@ page 55060 "SP Vendor API"
                 {
                     Caption = 'Balance Due';
                 }
+                field(phoneNo; Rec."Phone No.")
+                {
+                    Caption = 'Phone No.';
+                }
+                field(mobilePhoneNo; Rec."Mobile Phone No.")
+                {
+                    Caption = 'Mobile Phone No.';
+                }
+                field(eMail; Rec."E-Mail")
+                {
+                    Caption = 'Email';
+                }
+            }
+            part(vendorCommentLines; "SP Comment Line API V2")
+            {
+                Caption = 'Comment Line';
+                SubPageLink =
+                "Table Name" = CONST(Vendor),
+                "No." = FIELD("No.");
             }
         }
     }

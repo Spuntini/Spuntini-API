@@ -1,4 +1,4 @@
-page 55002 "SP Sales Line API"
+page 55075 "SP Sales Line API V2"
 {
     PageType = API;
     Caption = 'Sales Lines', Locked = true;
@@ -6,16 +6,20 @@ page 55002 "SP Sales Line API"
     //EntitySetCaption = 'Item Variants', Locked = true, Locked = true;
     EntityName = 'salesLine';
     EntitySetName = 'salesLines';
-    APIPublisher = 'christiaens';
-    APIGroup = 'spuntini';
+    APIPublisher = 'spuntini';
+    APIGroup = 'automate';
     ODataKeyFields = SystemId;
-    APIVersion = 'v1.0';
+    APIVersion = 'v2.0';
     SourceTable = "Sales Line";
+    ApplicationArea = All;
     ChangeTrackingAllowed = true;
-    Editable = false;
-    InsertAllowed = false;
-    DeleteAllowed = false;
-    //DelayedInsert = true;
+    //Editable = false;
+    InsertAllowed = true;
+    DeleteAllowed = true;
+    ModifyAllowed = true;
+    DelayedInsert = true;
+
+    AutoSplitKey = true;
 
     layout
     {
@@ -23,6 +27,14 @@ page 55002 "SP Sales Line API"
         {
             repeater(Group)
             {
+                field(type; Rec."Type")
+                {
+                    Caption = 'Type', Locked = true;
+                }
+                field(lineNo; Rec."Line No.")
+                {
+                    Caption = 'Line No.', Locked = true;
+                }
                 field(quantityBase; Rec."Quantity (Base)")
                 {
                     Caption = 'Quantity (Base)';
@@ -91,10 +103,6 @@ page 55002 "SP Sales Line API"
                 field(systemId; Rec.SystemId)
                 {
                     Caption = 'SystemId', Locked = true;
-                }
-                field(type; Rec."Type")
-                {
-                    Caption = 'Type', Locked = true;
                 }
                 field(unitOfMeasureCode; Rec."Unit of Measure Code")
                 {
@@ -199,10 +207,6 @@ page 55002 "SP Sales Line API"
                 field(lineDiscountAmount; Rec."Line Discount Amount")
                 {
                     Caption = 'Line Discount Amount', Locked = true;
-                }
-                field(lineNo; Rec."Line No.")
-                {
-                    Caption = 'Line No.', Locked = true;
                 }
                 field(locationCode; Rec."Location Code")
                 {

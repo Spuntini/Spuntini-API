@@ -1,4 +1,4 @@
-page 55039 "SP Item API"
+page 55061 "SP Item API V2"
 {
     PageType = API;
     Caption = 'Items', Locked = true;
@@ -6,17 +6,18 @@ page 55039 "SP Item API"
     //EntitySetCaption = 'Item Variants', Locked = true,locked = true;
     EntityName = 'item';
     EntitySetName = 'items';
-    APIPublisher = 'christiaens';
-    APIGroup = 'spuntini';
+    APIPublisher = 'spuntini';
+    APIGroup = 'automate';
     ODataKeyFields = SystemId;
-    APIVersion = 'v1.0';
+    APIVersion = 'v2.0';
     SourceTable = Item;
     ApplicationArea = All;
     ChangeTrackingAllowed = true;
-    Editable = false;
-    InsertAllowed = false;
-    DeleteAllowed = false;
-    //DelayedInsert = true;
+    Editable = true;
+    InsertAllowed = true;
+    DeleteAllowed = true;
+    ModifyAllowed = true;
+    DelayedInsert = true;
 
     layout
     {
@@ -210,7 +211,32 @@ page 55039 "SP Item API"
                 {
                     Caption = 'Block Reason';
                 }
+                field(inventoryPostingGroup; Rec."Inventory Posting Group")
+                {
+                    Caption = 'Inventory Posting Group';
+                }
             }
+
+            // -------------------------------JOINS---------------------------------------
+
+            // extend dimensies
+            part(DefaultDimensions; "SP default Dimension API V2")
+            {
+                Caption = 'Default Dimensions';
+                SubPageLink = "Table ID" = const(27), "No." = field("No.");
+            }
+            // extend unit of measures
+            part(ItemUoMs; "SP Item Unit of Measure API V2")
+            {
+                Caption = 'Item Unit of Measures';
+                SubPageLink = "Item No." = field("No.");
+            }
+            part(ItemReferences; "SP Item Reference API V2")
+            {
+                Caption = 'Item References';
+                SubPageLink = "Item No." = field("No.");
+            }
+
         }
     }
 

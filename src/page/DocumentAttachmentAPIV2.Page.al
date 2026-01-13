@@ -1,4 +1,4 @@
-page 55077 "SP Document Attachment API"
+page 55077 "SP Document Attachment API V2"
 {
     APIGroup = 'automate';
     APIPublisher = 'spuntini';
@@ -10,7 +10,13 @@ page 55077 "SP Document Attachment API"
     EntitySetName = 'documentAttachments';
     PageType = API;
     SourceTable = "Document Attachment";
-    
+    ChangeTrackingAllowed = true;
+    //Editable = false;
+    InsertAllowed = true;
+    DeleteAllowed = true;
+    ModifyAllowed = true;
+
+
     layout
     {
         area(Content)

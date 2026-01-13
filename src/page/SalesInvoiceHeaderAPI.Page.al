@@ -626,6 +626,10 @@ page 55024 "SP Sales Invoice Header API"
                 {
                     Caption = 'Your Reference', Locked = true;
                 }
+                field(ccsSent; Rec."CCS Sent")
+                {
+                    Caption = 'CCS Sent';
+                }
             }
         }
     }

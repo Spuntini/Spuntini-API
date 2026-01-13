@@ -185,6 +185,21 @@ page 55068 "SP Sales Header API V2"
                     "Document Type" = field("Document Type"),
                     "Document No." = field("No.");
             }
+
+            part(documentAttachments; "SP Document Attachment API V2")
+            {
+                Caption = 'documentAttachment';
+                EntityName = 'documentAttachment';
+                EntitySetName = 'documentAttachments';
+
+                SubPageLink =
+                    "Table ID" = const(Database::"Sales Header"),
+                    "Document Type" = field("Document Type"),
+                    "No." = field("No.");
+            }
+
+
+
         }
     }
     // =====================================================
@@ -407,6 +422,40 @@ page 55068 "SP Sales Header API V2"
         actionContext.SetResultCode(WebServiceActionResultCode::Updated);
     end;
 
+    // POST CREDIT MEMO =====================================================================================================
+
+    [ServiceEnabled]
+    procedure PostCreditMemo(var actionContext: WebServiceActionContext)
+    var
+        SH: Record "Sales Header";
+        SalesLine: Record "Sales Line";
+        SalesPost: Codeunit "Sales-Post";
+    begin
+        SH.Get(Rec."Document Type", Rec."No.");
+
+        if SH."Document Type" <> SH."Document Type"::"Credit Memo" then
+            Error('Document %1 is not a Sales Credit Memo.', SH."No.");
+
+        // Check dat er effectief iets te boeken is
+        SalesLine.Reset();
+        SalesLine.SetRange("Document Type", SH."Document Type");
+        SalesLine.SetRange("Document No.", SH."No.");
+        SalesLine.SetFilter("Qty. to Invoice", '<>0');
+        if not SalesLine.FindFirst() then
+            Error('Credit Memo %1 has no quantity to invoice.', SH."No.");
+
+        // Voor een credit memo is "Ship" meestal irrelevant; maar dit is veilig:
+        SH.Ship := false;
+        SH.Invoice := true;
+
+        Clear(SalesPost);
+        SalesPost.Run(SH);
+
+        actionContext.SetObjectType(ObjectType::Page);
+        actionContext.SetObjectId(Page::"SP Sales Header API V2");
+        actionContext.AddEntityKey(Rec.FieldNo(SystemId), Rec.SystemId);
+        actionContext.SetResultCode(WebServiceActionResultCode::Updated);
+    end;
 
 
 }

@@ -2,7 +2,7 @@
   "id": "06fea566-6f87-4ab1-ad80-07faa702f1e8",
   "name": "Spuntini-API",
   "publisher": "Spuntini",
-  "version": "26.0.260108.7",
+  "version": "26.0.260113.3",
   "privacyStatement": "https://www.christiaens.net/nl/privacydisclaimer",
   "url": "https://www.christiaens.net",
   "logo": ".images/Dynamate Custom App lowercase.png",
@@ -14,6 +14,13 @@
       "publisher": "Dynamate",
       "version": "25.0.0.0"
     },
+    {
+      "id": "e1d97edc-c239-46b4-8d84-6368bdf67c8b",
+      "name": "E-Document Core",
+      "publisher": "Microsoft",
+      "version": "25.0.0.0"
+    },
+
     {
       "id": "bd4e4e95-a7c5-4d79-b2c7-a1e52771eeac",
       "name": "BoCount Dynamics Base",

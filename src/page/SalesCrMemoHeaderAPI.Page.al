@@ -1,7 +1,6 @@
 page 55025 "SP Sales Cr Memo Header API"
 {
     PageType = API;
-    Caption = 'Contact', Locked = true;
     EntityName = 'salesCrMemoHeader';
     EntitySetName = 'salesCrMemoHeaders';
     APIPublisher = 'christiaens';
